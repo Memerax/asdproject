@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
+const recipesData = [ {
+    name: "Hamburgers",
+    Ingredients: "Meat, Bun",
+    Directions: "Cook on the grill",
+    Description: "Tasty Hamburger",
+    recipe_img: "./logo.svg"
+}]
+
+const recipestest = [
+    "Hamburgers",
+     "Meat, Bun",
+    "Cook on the grill",
+    "Tasty Hamburger",
+    "./logo.svg"
+]
+function Main() {
+    return (
+        <section>
+            <ul>
+                {recipestest.map((recipe) => <li>{recipe}</li>)}
+            </ul>
+        </section>
+    )
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <h2>Recipes List</h2>
+        <Main/>
     </div>
   );
 }
