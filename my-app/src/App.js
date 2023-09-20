@@ -16,6 +16,20 @@ const recipestest = [
     "Tasty Hamburger",
     "./logo.svg"
 ]
+function Home() {
+    return (
+    <div>
+        <h1>My website</h1>
+    </div>
+    )}
+
+function Formpage() {
+    return (
+        <div>
+            <h1>Contact</h1>
+        </div>
+    )
+}
 function Main() {
     return (
         <section>
