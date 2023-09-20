@@ -1,22 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { Link } from "react-router-dom";
+import {useState, useEffect} from "react";
 
-const recipesData = [ {
-    name: "Hamburgers",
-    Ingredients: "Meat, Bun",
-    Directions: "Cook on the grill",
-    Description: "Tasty Hamburger",
-    recipe_img: "./logo.svg"
-}]
 
-const recipestest = [
-    "Hamburgers",
-     "Meat, Bun",
-    "Cook on the grill",
-    "Tasty Hamburger",
-    "./logo.svg"
-]
+
 function Home() {
     return (
     <div>
@@ -35,12 +23,34 @@ function Home() {
     )
 }
 function Main() {
+    const recipesData = [
+        {
+            name: "Hamburgers",
+            Ingredients: "Meat, Bun",
+            Directions: "Cook on the grill",
+            Description: "Tasty Hamburger",
+            recipe_img: "./logo.svg"
+        },
+        {
+            name: "Hamburgers",
+            Ingredients: "Meat, Bun",
+            Directions: "Cook on the grill",
+            Description: "Tasty Hamburger",
+            recipe_img: "./logo.svg"
+        }
+    ]
+
+    const [recipes, setRecipe] = useState(null)
+    useEffect( () => {
+        setRecipe(recipesData)
+    },[])
+
+    if ( recipes == null) return ;
+
     return (
-        <section>
-            <ul>
-                {recipestest.map((recipe) => <li>{recipe}</li>)}
-            </ul>
-        </section>
+        recipesData.map( (recipes, i) => {
+            return <h1>{recipes.name}</h1>
+        })
     )
 }
 export function App() {
