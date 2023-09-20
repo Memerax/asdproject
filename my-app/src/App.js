@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Link } from "react-router-dom";
 
 const recipesData = [ {
     name: "Hamburgers",
@@ -23,10 +24,13 @@ function Home() {
     </div>
     )}
 
-function Formpage() {
+ export function Formpage() {
     return (
         <div>
-            <h1>Contact</h1>
+            <nav>
+                <Link to={"/"}>Home</Link>
+            </nav>
+            <h1>Form To add Recipe</h1>
         </div>
     )
 }
@@ -39,13 +43,15 @@ function Main() {
         </section>
     )
 }
-function App() {
+export function App() {
   return (
     <div>
+        <nav>
+            <Link to={"/Formpage"}>FormPage</Link>
+        </nav>
         <h2>Recipes List</h2>
         <Main/>
     </div>
   );
 }
 
-export default App;
