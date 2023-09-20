@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
+import {RecipeList} from "./Recipe";
 
 
 
@@ -16,27 +17,29 @@ function Home() {
     return (
         <div>
             <nav>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/Formpage"}> FormPage </Link>
+                <br/>
+                <Link to={"/"}> Home </Link>
             </nav>
             <h1>Form To add Recipe</h1>
         </div>
     )
 }
-function Main() {
+function Main(props) {
     const recipesData = [
         {
             name: "Hamburgers",
             Ingredients: "Meat, Bun",
             Directions: "Cook on the grill",
             Description: "Tasty Hamburger",
-            recipe_img: "./logo.svg"
+            recipe_img: "./images/hamburger.jpg"
         },
         {
-            name: "Hamburgers",
-            Ingredients: "Meat, Bun",
-            Directions: "Cook on the grill",
-            Description: "Tasty Hamburger",
-            recipe_img: "./logo.svg"
+            name: "Chicken Sandwich",
+            Ingredients: "Chicken, Lettuce, Bacon, Mayo",
+            Directions: "Chop up the chicken, fry the bacon and add the mayo",
+            Description: "Chicken sandwich with bacon",
+            recipe_img: "./images/Chicken.jpg"
         }
     ]
 
@@ -48,16 +51,16 @@ function Main() {
     if ( recipes == null) return ;
 
     return (
-        recipesData.map( (recipes, i) => {
-            return <h1>{recipes.name}</h1>
-        })
+        <RecipeList data={recipes}/>
     )
 }
 export function App() {
   return (
     <div>
         <nav>
-            <Link to={"/Formpage"}>FormPage</Link>
+            <Link to={"/Formpage"}> FormPage </Link>
+            <br/>
+            <Link to={"/"}> Home </Link>
         </nav>
         <h2>Recipes List</h2>
         <Main/>
