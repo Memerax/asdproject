@@ -1,4 +1,3 @@
-
 import './App.css';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
@@ -24,30 +23,31 @@ const recipesData = [
         visible: true
     }
 ]
- export function Formpage() {
-     const nameInput = useRef();
-     const ingredientsInput = useRef();
-     const directionsInput = useRef();
-     const descriptionInput = useRef();
-     const recipe_img = useRef();
+export function Formpage() {
+    const nameInput = useRef();
+    const ingredientsInput = useRef();
+    const directionsInput = useRef();
+    const descriptionInput = useRef();
+    const recipe_img = useRef();
 
-     const submit = (e) => {
-         e.preventDefault();
-         const name = nameInput.current.value;
-         const ingredients = ingredientsInput.current.value;
-         const directions = directionsInput.current.value;
-         const description = descriptionInput.current.value;
+    const submit = (e) => {
+        e.preventDefault();
+        const name = nameInput.current.value;
+        const ingredients = ingredientsInput.current.value;
+        const directions = directionsInput.current.value;
+        const description = descriptionInput.current.value;
 
-         const newRecipe = {
-             name: name,
-             Ingredients: ingredients,
-             Directions: directions,
-             Description: description,
-             recipe_img: "./images/hamburger.jpg"
-         }
-         console.log(newRecipe)
-         recipesData.push(newRecipe)
-     };
+        const newRecipe = {
+            name: name,
+            Ingredients: ingredients,
+            Directions: directions,
+            Description: description,
+            recipe_img: "./images/hamburger.jpg"
+        }
+        console.log(newRecipe)
+        recipesData.push(newRecipe)
+        console.log()
+    };
     return (
         <div>
             <nav>
@@ -86,6 +86,13 @@ const recipesData = [
                         placeholder=""
                     />
                     <br/>
+                    <label>Image </label>
+                    <input
+                        ref={recipe_img}
+                        type="file"
+                        placeholder=""
+                    />
+                    <br/>
                     <button type="submit">submit</button>
                 </form>
             </div>
@@ -107,16 +114,15 @@ function Main(props) {
     )
 }
 export function App() {
-  return (
-    <div>
-        <nav>
-            <Link to={"/Formpage"}> FormPage </Link>
-            <br/>
-            <Link to={"/"}> Home </Link>
-        </nav>
-        <h2>Recipes List</h2>
-        <Main/>
-    </div>
-  );
+    return (
+        <div>
+            <nav>
+                <Link to={"/Formpage"}> FormPage </Link>
+                <br/>
+                <Link to={"/"}> Home </Link>
+            </nav>
+            <h2>Recipes List</h2>
+            <Main/>
+        </div>
+    );
 }
-

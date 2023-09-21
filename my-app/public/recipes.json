@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Hamburgers",
+    "Ingredients": "Meat, Bun",
+    "Directions": "Cook on the grill",
+    "Description": "Tasty Hamburger",
+    "recipe_img": "./images/hamburger.jpg",
+    "visible": true
+  },
+  {
+    "name": "Chicken Sandwich",
+    "Ingredients": "Chicken, Lettuce, Bacon, Mayo",
+    "Directions": "Chop up the chicken, fry the bacon and add the mayo",
+    "Description": "Chicken sandwich with bacon",
+    "recipe_img": "./images/Chicken.jpg",
+    "visible": true
+  }
+]
