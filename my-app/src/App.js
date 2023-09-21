@@ -11,7 +11,7 @@ export function Formpage() {
     const ingredientsInput = useRef();
     const directionsInput = useRef();
     const descriptionInput = useRef();
-    const recipe_img = useRef();
+    const recipe_imgInput = useRef();
 
     const submit = (e) => {
         e.preventDefault();
@@ -19,13 +19,14 @@ export function Formpage() {
         const ingredients = ingredientsInput.current.value;
         const directions = directionsInput.current.value;
         const description = descriptionInput.current.value;
+        const recipe_img = recipe_imgInput.current.value;
 
         const newRecipe = {
             name: name,
             Ingredients: ingredients,
             Directions: directions,
             Description: description,
-            recipe_img: "./images/hamburger.jpg"
+            recipe_img: recipe_img
         }
         console.log(newRecipe)
         recipesData.push(newRecipe)
@@ -69,12 +70,13 @@ export function Formpage() {
                         placeholder=""
                     />
                     <br/>
-                    <label>Image </label>
-                    <input
-                        ref={recipe_img}
-                        type="file"
-                        placeholder=""
-                    />
+                    <div>
+                        <select ref={recipe_imgInput}>
+                            <option value="fruit">Fruit </option>
+                            <option value="vegetable">Vegetable</option>
+                            <option value="meat">Meat</option>
+                        </select>
+                    </div>
                     <br/>
                     <button type="submit">submit</button>
                 </form>
