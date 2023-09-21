@@ -28,7 +28,6 @@ function Recipe(props) {
                 <p>Ingredients: {props.ingredients}</p>
                 <p>Directions: {props.directions}</p>
                 <p>Description: {props.description}</p>
-                <p>{props.id}</p>
                 <img height={"200"}
                      src={props.recipe_img}
                 />

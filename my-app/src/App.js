@@ -3,26 +3,9 @@ import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
 import {RecipeList} from "./Recipe";
 import { useRef} from "react";
+//import the Json file to an array
+import recipesData from "./recipes.json";
 
-
-const recipesData = [
-    {
-        name: "Hamburgers",
-        Ingredients: "Meat, Bun",
-        Directions: "Cook on the grill",
-        Description: "Tasty Hamburger",
-        recipe_img: "./images/hamburger.jpg",
-        visible: true
-    },
-    {
-        name: "Chicken Sandwich",
-        Ingredients: "Chicken, Lettuce, Bacon, Mayo",
-        Directions: "Chop up the chicken, fry the bacon and add the mayo",
-        Description: "Chicken sandwich with bacon",
-        recipe_img: "./images/Chicken.jpg",
-        visible: true
-    }
-]
 export function Formpage() {
     const nameInput = useRef();
     const ingredientsInput = useRef();
