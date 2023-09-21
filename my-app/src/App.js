@@ -72,9 +72,9 @@ export function Formpage() {
                     <br/>
                     <div>
                         <select ref={recipe_imgInput}>
-                            <option value="fruit">Fruit </option>
-                            <option value="vegetable">Vegetable</option>
-                            <option value="meat">Meat</option>
+                            <option value="./images/fruit.jpg">Fruit </option>
+                            <option value="./images/vegetables.jpg">Vegetable</option>
+                            <option value="./images/meat.jpg">Meat</option>
                         </select>
                     </div>
                     <br/>

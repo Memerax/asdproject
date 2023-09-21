@@ -10,15 +10,13 @@ export function RecipeList(props) {
                            directions = {recipe.Directions}
                            description = {recipe.Description}
                            recipe_img = {recipe.recipe_img}
-                           id = {i}
-                           visible ={true}
             />
         })
     )
 }
 
 function Recipe(props) {
-    const [visible, setVisible] = useState(props.visible);
+    const [visible, setVisible] = useState(true);
 
     if (visible) {
         return (
