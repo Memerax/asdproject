@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 
-
 export function RecipeList(props) {
 
     return (
@@ -10,8 +9,7 @@ export function RecipeList(props) {
                            directions = {recipe.Directions}
                            description = {recipe.Description}
                            recipe_img = {recipe.recipe_img}
-                           id = {i}
-                           visible ={true}
+                           visible = {recipe.visible}
             />
         })
     )
