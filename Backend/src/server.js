@@ -14,6 +14,14 @@ app.use(express.json());
 //     res.send(`this is a test ${name}`)
 // })
 
+app.post('/api/remove/:name', async (req,res) => {
+    const {name} = req.params
+    const client = new MongoClient('mongodb://127.0.0.1:27017')
+    await client.connect()
+    const db = client.db('recipe-db')
+    const article = await db.collection('articles').deleteOne(name)
+    res.json(article)
+})
 app.get('/api/recipes/:name', async (req,res) => {
     const {name} = req.params
     const client = new MongoClient('mongodb://127.0.0.1:27017')
