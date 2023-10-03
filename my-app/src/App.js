@@ -4,7 +4,10 @@ import {useState, useEffect} from "react";
 import {RecipeList} from "./Recipe";
 import { useRef} from "react";
 //import the Json file to an array
-import recipesData from "./recipes.json";
+// import recipesData from "./recipes.json";
+import axios from "axios";
+
+
 
 export function Formpage() {
     const nameInput = useRef();
@@ -28,9 +31,7 @@ export function Formpage() {
             Description: description,
             recipe_img: recipe_img
         }
-        console.log(newRecipe)
-        recipesData.push(newRecipe)
-        console.log()
+        // recipesData.push(newRecipe)
     };
     return (
         <div>
@@ -86,13 +87,19 @@ export function Formpage() {
 }
 function Main(props) {
 
-
     const [recipes, setRecipe] = useState(null)
-    useEffect( () => {
-        setRecipe(recipesData)
-    },[])
+    useEffect(() => {
+        const load = async () => {
+            const response = await axios.get('/api/recipes/Hamburgers')
+            console.log("Arrayouput")
+            console.log(response.data)
+            setRecipe(response.data)
+        }
+        load()
 
-    if ( recipes == null) return ;
+    }, [])
+    console.log("test")
+    if (recipes == null) return;
 
     return (
         <RecipeList data={recipes}/>
